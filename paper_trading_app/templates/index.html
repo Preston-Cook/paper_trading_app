@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table">
+        <caption>Stock Holdings</caption>
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Current Price</th>
+            <th scope="col">Holding Value</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for stock in stock_lst %}
+            <tr>
+                <td>{{ stock["name"] }}</td>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["current_price"] }}</td>
+                <td>{{ stock["holding_value"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><b>CASH BALANCE: {{ cash }}</b></p>
+    <p><b>GRAND TOTAL: {{ grand_total }}</b></p>
+    </div>
+{% endblock %}

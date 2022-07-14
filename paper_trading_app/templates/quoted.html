@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+<div class="table-responsive">
+    <table class="table">
+    <caption>Stock Quote</caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ stock_data["name"] }}</td>
+        <td>{{ stock_data["symbol"] }}</td>
+        <td>{{ stock_data["price"] | usd }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+{% endblock %}
